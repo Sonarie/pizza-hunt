@@ -1,10 +1,10 @@
-const { response } = require("express");
-
 const $pizzaList = document.querySelector("#pizza-list");
 const getPizzaList = () => {
   fetch("/api/pizzas")
-    .then((respons) => response.json())
-    .then((pizzaListArr) => {})
+    .then((response) => response.json())
+    .then((pizzaListArr) => {
+      pizzaListArr.forEach(printPizza);
+    })
     .catch((err) => {
       console.log(err);
     });
